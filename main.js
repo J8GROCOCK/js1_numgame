@@ -25,7 +25,7 @@ function checkGuess(number,guess,counter){
     if (guess === undefined) return undefined;
 
     if (guess === number) {
-        console.log("Bingo!")
+        console.log(`Bingo! It was ${guess} all along!`)
         return 1;
     } else if (guess > number) {
         console.log(`${guess} Is Too High! Attempt ${counter + 1} of 10`)
@@ -55,6 +55,9 @@ function game(){
     const number = generateRandomNumber()
 
     console.log("Welcome to the number game! The faster you guess the number the more points you will get!")
+    console.log("You'll get 3 points if you guess correctly in 3 or less")
+    console.log("You'll get 2 points if you guess correctly in 6 or less")
+    console.log("You'll get 1 point if you guess correctly in 10 or less")
 
     while(!win && counter < 10) {
         const guess = getPlayerGuess()
